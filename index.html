@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>장희성 블로그</title>
+  <title>김도원 블로그</title>
   <!-- 제이쿼리 -->
   <!-- js 쉽게 만들어 줌 -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -57,7 +57,15 @@
   </div>
   <div id="viewer-1">
   </div>
+
   <ul class="list">
+    <li>
+      <a href="javascript:;" onclick="showPage(this);" class="block p-2 hover:text-red-500 flex gap-2">
+        <span class="data-id-5">5</span>
+        <span class="mr-auto underline">DB SELECT 문 예시</span>
+        <span>2023-03-08</span>
+      </a>
+    </li>
     <li>
       <a href="javascript:;" onclick="showPage(this);" class="block p-2 hover:text-red-500 flex gap-2">
         <span class="data-id-4">4</span>
@@ -96,7 +104,6 @@
           let html = katex.renderToString(node.literal, {
             throwOnError: false
           });
-
           return [{
             type: "openTag",
             tagName: "div",
@@ -155,16 +162,13 @@
           });
         })
     }
-
     const params = new URL(document.location).searchParams;
     const paramId = params.get("id");
-
     if ($('.data-id-' + paramId).length == 1) {
       $('.data-id-' + paramId).parent().click();
     } else {
       $('.list > li:first-child > a').click();
     }
   </script>
-
 </body>
 </html>
